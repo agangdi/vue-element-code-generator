@@ -1,0 +1,117 @@
+{
+  "file": "views/Users.vue",
+  "getList": {
+    "model": "classModel",
+    "action": "list"
+  },
+  "search": [
+    {
+      "type": "input",
+      "col": "class_id"
+    },
+    {
+      "type": "input",
+      "col": "class_name"
+    },
+    {
+      "type": "autocomplete",
+      "col": "Class",
+      "data": "classes",
+      "key": "class_id"
+    },
+    {
+      "type": "select",
+      "col": "grade",
+      "data": "grades",
+      "key": "grade"
+    },
+    {
+      "type": "autocomplete",
+      "col": "School",
+      "data": "schools",
+      "key": "school_id"
+    },
+    {
+      "type": "autocomplete",
+      "col": "College",
+      "data": "colleges",
+      "key": "college_id"
+    },
+    {
+      "type": "autocomplete",
+      "col": "Major",
+      "data": "majors",
+      "key": "major_id"
+    },
+    {
+      "type": "select",
+      "col": "class_status",
+      "data": "class_status",
+      "key": "class_status"
+    }
+  ],
+  "tableBar": [
+    "EditClass",
+    "upload",
+    "lock",
+    "unlock"
+  ],
+  "table": "tableWithSelection",
+  "tableCols": [
+    {
+      "col": "class_id"
+    },
+    {
+      "col": "class_name"
+    },
+    {
+      "col": "grade"
+    },
+    {
+      "col": "major_name"
+    },
+    {
+      "col": "college_name"
+    },
+    {
+      "col": "school_name"
+    },
+    {
+      "col": "classStatusLabel"
+    },
+    {
+      "col": "class_create_time"
+    }
+  ],
+  "tableOpeCol": {
+    "buttons": [
+      {
+        "type": "text",
+        "action": "onShowDetail(scope.row)",
+        "name": "查看",
+        "class": "text-button"
+      },
+      {
+        "type": "text",
+        "action": "onShowEdit(scope.row)",
+        "name": "编辑",
+        "class": "text-default",
+        "props": " :obj=editRow "
+      },
+      {
+        "type": "text",
+        "action": "onForbidden(scope.row)",
+        "name": "封停",
+        "class": "text-warning"
+      }
+    ]
+  },
+  "page": 1,
+  "mixins": [
+    "CreateFilter",
+    "showEditMixin",
+    "uploadMixin",
+    "pageMixin",
+    "blockMixin"
+  ]
+}

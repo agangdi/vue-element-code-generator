@@ -51,7 +51,7 @@ export function get(url, params){
             if(res.data.code == 0) {
                 resolve(res.data);
             }else{
-
+                Message.warning(res.data.msg);
             }
         })
         .catch(err => {
@@ -69,25 +69,10 @@ export function post(url, params) {
     return new Promise((resolve, reject) => {
         axios.post(url, params)
         .then(res => {
-            if(res.data.error_code == 0) {
+            if(res.data.code == 0) {
                 resolve(res.data);
             }else{
-                switch(res.data.error_code) {
-                    case 1001:
-                    case 1002:
-                    case 1003:
-                    case 1004:
-                    case 1005:
-                    default:
-                    globalFunc.$message({
-                        type: "warning",
-                        message: res.data.message,
-                        onClose: () => {
-                            
-                        }
-                    });
-                    break;
-                }
+                Message.warning(res.data.msg);
             }
         })
         .catch(err => {
@@ -101,25 +86,10 @@ export function upload(url, formData) {
     return new Promise((resolve, reject) => {
         axios.post(url, formData)
         .then(res => {
-            if(res.data.error_code == 0) {
+            if(res.data.code == 0) {
                 resolve(res.data);
             }else{
-                switch(res.data.error_code) {
-                    case 1001:
-                    case 1002:
-                    case 1003:
-                    case 1004:
-                    case 1005:
-                    default:
-                    globalFunc.$message({
-                        type: "warning",
-                        message: res.data.message,
-                        onClose: () => {
-                            
-                        }
-                    });
-                    break;
-                }
+                Message.warning(res.data.msg);
             }
         })
         .catch(err => {
