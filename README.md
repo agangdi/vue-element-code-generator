@@ -1,9 +1,13 @@
-# app
+# vue-element-code-generator
 
 ## Description
-	vue and element-ui admin dashbord scaffold
+
+```
+vue add element-ui admin dashbord scaffold
+```
 
 ## Project setup
+
 ```
 yarn install
 ```
@@ -24,4 +28,5 @@ yarn lint
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
