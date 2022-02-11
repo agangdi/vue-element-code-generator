@@ -1,7 +1,7 @@
 # app
 
 ## Description
-	vue and element-ui admin dashbord scaffold
+	vue and element-ui admin dashbord scaffold, now use for test git 
 
 ## Project setup
 ```
